@@ -65,11 +65,10 @@ public:
             temp = temp->next;
             count++;
         }
-        cout << "...\n";
+        cout << "\n";
     }
 };
 
-// Main function
 int main() {
     LinkedList list;
     int n, val, choice;
@@ -82,18 +81,25 @@ int main() {
         list.insertEnd(val);
     }
 
-    cout << "Do you want to make the list circular? (1 = Yes / 0 = No): ";
-    cin >> choice;
-    if (choice == 1)
-        list.makeCircular();
+    cout << endl;
+    list.display();
+
+    if (list.isCircular())
+        cout << " The linked list is circular.\n";
+    else
+        cout << " The linked list is NOT circular.\n";
+
+
+    cout << "making the list circular\n";
+    list.makeCircular();
 
     cout << endl;
     list.display();
 
     if (list.isCircular())
-        cout << "✅ The linked list is circular.\n";
+        cout << " The linked list is circular.\n";
     else
-        cout << "❌ The linked list is NOT circular.\n";
+        cout << " The linked list is NOT circular.\n";
 
     return 0;
 }
